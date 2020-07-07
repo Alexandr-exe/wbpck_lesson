@@ -1,0 +1,18 @@
+@import './vendor/normalize.css';
+@import 'vendor/fonts.css';
+@import 'blocks/root/root.css';
+@import 'blocks/header/header.css';
+@import 'blocks/logo/logo.css';
+@import 'blocks/profile/profile.css';
+@import 'blocks/button/button.css';
+@import 'blocks/user-info/user-info.css';
+@import 'blocks/places-list/places-list.css';
+@import 'blocks/place-card/place-card.css';
+@import 'blocks/popup/popup.css';
+@import 'blocks/error/error.css';
+@import 'blocks/spinner/spinner.css';
+@import 'blocks/spinner/_visible/spinner_visible.css';
+
+body {
+  background-color: #000;
+}
