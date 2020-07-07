@@ -1,0 +1,15 @@
+.user-info__photo {
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-image: url('https://i.pinimg.com/originals/f5/c6/92/f5c69212868e8beaf47c285b91f70f6c.jpg');
+}
+
+@media screen and (max-width: 980px) {
+  .user-info__photo {
+    margin-top: 40px;
+  }
+}
