@@ -1,7 +1,7 @@
 {
   "name": "wbpck_lesson",
   "version": "1.0.0",
-  "homepage": "https://alexandr-exe.github.io/wbpck_lesson/",
+  "homepage": "https://alexandr-exe.github.io/wbpck_lesson",
   "description": "yandex.praktikum",
   "main": "index.js",
   "scripts": {
@@ -9,10 +9,12 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
     "deploy": "cross-env NODE_ENV=production gh-pages -d dist"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Alexandr-exe/wbpck_lesson.git"
   },
+
   "keywords": [
     "webpack",
     "js",
@@ -24,7 +26,6 @@
   "bugs": {
     "url": "https://github.com/Alexandr-exe/wbpck_lesson/issues"
   },
-  "homepage": "https://github.com/Alexandr-exe/wbpck_lesson#readme",
   "devDependencies": {
     "@babel/cli": "^7.10.4",
     "@babel/core": "^7.10.4",
