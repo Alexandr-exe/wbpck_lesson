@@ -3,6 +3,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const webpack = require('webpack');
+const NukeCssPlugin = require('nukecss-webpack');
+const FontminPlugin = require('fontmin-webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -23,21 +25,53 @@ module.exports = {
         },
         {
             test: /\.css$/,
-            use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), 'css-loader', 'postcss-loader']
+            use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+            {
+                loader:'css-loader',
+                options: {
+                    importLoaders: 2
+                } 
+            }, 
+            'postcss-loader'
+                ]
         },
         {
             test: /\.(png|jpe?g|gif|svg)$/i,
-            use:[{
-                loader: 'file-loader',
-                 options: {
+            use:[
+                {
+                    loader: 'file-loader',
+                    options:{
                         name: './images/[name].[ext]',
-                         esModule: false,
+                        esModule: false,
                     }
-            }]
+                },
+                {
+                  loader: 'image-webpack-loader',
+                  options: {
+                    mozjpeg: {
+                      progressive: true,
+                      quality: 65
+                    },
+                    optipng: {
+                      enabled: false,
+                    },
+                    pngquant: {
+                      quality: [0.65, 0.90],
+                      speed: 4
+                    },
+                    gifsicle: {
+                      interlaced: false,
+                    },
+                    webp: {
+                      quality: 75
+                    }
+                  }
+                },
+              ]
         },
         {
             test: /\.(eot|ttf|woff|woff2)$/,
-            loader: 'file-loader?name=./vendor/[name].[ext]'
+            loader: 'file-loader?name=./vendor/font/[name].[ext]'
         }
         ]
     },
@@ -61,6 +95,11 @@ module.exports = {
         new WebpackMd5Hash(),
         new webpack.DefinePlugin({
             'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-        })
+        }),
+        new NukeCssPlugin(),
+        new FontminPlugin({
+            autodetect: true,
+            glyphs: ['\uf0c8'],
+          }),
     ]
 }
