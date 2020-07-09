@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const webpack = require('webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const isDev = process.env.NODE_ENV === 'dev';
+const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
     entry: [
@@ -26,20 +26,14 @@ module.exports = {
             use: [(isDev ? 'style-loader' : MiniCssExtractPlugin.loader), 'css-loader', 'postcss-loader']
         },
         {
-            test: /\.(png|jpe?g|gif)$/i,
+            test: /\.(png|jpe?g|gif|svg)$/i,
             use:[{
-                loader: 'file-loader'
+                loader: 'file-loader',
+                 options: {
+                        name: './images/[name].[ext]',
+                         esModule: false,
+                    }
             }]
-        },
-        {
-            test: /\.(png|jpg|gif|ico|svg)$/,
-            use: [
-                'file-loader?name=./images/[name].[ext]',
-                {
-                    loader: 'image-webpack-loader',
-                    options: {}
-                },
-            ]
         },
         {
             test: /\.(eot|ttf|woff|woff2)$/,
