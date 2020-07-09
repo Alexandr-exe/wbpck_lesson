@@ -30,7 +30,7 @@
 
     <div class="popup" data-modal="card">
       <div class="popup__content">
-        <img src="images/close.svg" alt="" class="popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="new" novalidate>
           <input id="name-card" type="text" required minlength="2" maxlength="30" name="name"
@@ -46,7 +46,7 @@
 
     <div class="popup" data-modal="avatar">
       <div class="popup__content">
-        <img src="images/close.svg" alt="" class="popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
         <h3 class="popup__title">Изменить Аватар</h3>
         <form class="popup__form" name="avatar" novalidate>
           <input id="link" required type="url" name="link" class="popup__input popup__input_type_link-url"
@@ -59,7 +59,7 @@
 
     <div class="popup" data-modal="edit">
       <div class="popup__content">
-        <img src="images/close.svg" alt="" class="popup__close">
+        <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__form" name="edit" novalidate>
           <input id="name-info" type="text" required minlength="2" maxlength="30" name="name"
