@@ -3,7 +3,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const webpack = require('webpack');
-const NukeCssPlugin = require('nukecss-webpack');
 const FontminPlugin = require('fontmin-webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
@@ -96,7 +95,6 @@ module.exports = {
         new webpack.DefinePlugin({
             'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
-        new NukeCssPlugin(),
         new FontminPlugin({
             autodetect: true,
             glyphs: ['\uf0c8'],
