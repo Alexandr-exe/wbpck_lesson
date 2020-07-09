@@ -7,8 +7,6 @@
   import {ImagePopup} from "./script/ImagePopup";
   import {FormValidator} from "./script/FormValidator";
 
-
-
   const root = document.querySelector('.root');
   const placesList = document.querySelector('.places-list');
   const spinner = document.querySelector('.spinner');
