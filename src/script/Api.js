@@ -3,7 +3,9 @@ export class Api {
   }
 
   getUserInfo() {
-    return fetch(process.env.NODE_ENV === 'production' ? 'https://praktikum.tk/cohort11/users/me' : 'http://praktikum.tk/cohort11/users/me', {
+      const API_URL = process.env.NODE_ENV === 'production' ? 'https://praktikum.tk/cohort11/users/me' : 'http://praktikum.tk/cohort11/users/me';
+
+      return fetch(API_URL, {
       headers: {
         authorization: '38f54b4a-ae5c-44e1-aa2c-ca646ca0ecc7'
       }
@@ -17,7 +19,9 @@ export class Api {
   }
 
   setUserInfo(name, about, avatar) {
-    return fetch( process.env.NODE_ENV === 'production' ? 'https://praktikum.tk/cohort11/users/me' : 'http://praktikum.tk/cohort11/users/me', {
+      const API_URL = process.env.NODE_ENV === 'production' ? 'https://praktikum.tk/cohort11/users/me' : 'http://praktikum.tk/cohort11/users/me';
+
+      return fetch( API_URL, {
       method: 'PATCH',
       headers: {
         authorization: '38f54b4a-ae5c-44e1-aa2c-ca646ca0ecc7',
@@ -38,7 +42,9 @@ export class Api {
   }
 
   getCard() {
-  return  fetch(process.env.NODE_ENV === 'production' ? 'https://praktikum.tk/cohort11/cards' : 'http://praktikum.tk/cohort11/cards', {
+      const API_URL = process.env.NODE_ENV === 'production' ? 'https://praktikum.tk/cohort11/cards' : 'http://praktikum.tk/cohort11/cards'
+
+      return  fetch( API_URL, {
       headers: {
         authorization: '38f54b4a-ae5c-44e1-aa2c-ca646ca0ecc7'
       }
