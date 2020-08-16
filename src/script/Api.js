@@ -3,7 +3,7 @@ export class Api {
   }
 
   getUserInfo() {
-      const API_URL = NODE_ENV === 'production' ? 'https://praktikum.tk/cohort11/users/me' : 'http://praktikum.tk/cohort11/users/me';
+      const API_URL = NODE_ENV === 'production' ? 'https://nomoreparties.co/cohort11/users/me' : 'http://nomoreparties.co/cohort11/users/me';
 
       return fetch(API_URL, {
       headers: {
@@ -19,7 +19,7 @@ export class Api {
   }
 
   setUserInfo(name, about, avatar) {
-      const API_URL = NODE_ENV === 'production' ? 'https://praktikum.tk/cohort11/users/me' : 'http://praktikum.tk/cohort11/users/me';
+      const API_URL = NODE_ENV === 'production' ? 'https://nomoreparties.co/cohort11/users/me' : 'http://nomoreparties.co/cohort11/users/me';
 
       return fetch( API_URL, {
       method: 'PATCH',
@@ -42,7 +42,7 @@ export class Api {
   }
 
   getCard() {
-      const API_URL = NODE_ENV === 'production' ? 'https://praktikum.tk/cohort11/cards' : 'http://praktikum.tk/cohort11/cards'
+      const API_URL = NODE_ENV === 'production' ? 'https://nomoreparties.co/cohort11/cards' : 'http://nomoreparties.co/cohort11/cards'
 
       return  fetch( API_URL, {
       headers: {
